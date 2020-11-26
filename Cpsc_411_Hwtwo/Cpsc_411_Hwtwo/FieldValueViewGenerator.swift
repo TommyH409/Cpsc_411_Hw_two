@@ -39,10 +39,9 @@ class FieldValueViewGenerator {
         // Setting orientation
         lbl.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         value_Lines.setContentHuggingPriority(.defaultLow, for: .horizontal)
-        lbl.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal
-        )
+        lbl.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
         value_Lines.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
-        
+        //
         return stack_View
     }
 }
