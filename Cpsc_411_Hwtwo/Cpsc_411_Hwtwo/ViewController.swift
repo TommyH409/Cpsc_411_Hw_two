@@ -20,18 +20,7 @@ class ViewController: UIViewController {
         let sub_View = detail_Gen.generate()
         view.addSubview(sub_View)
         
-        
-        // Button settings
-        let Stack_View_2 = UIStackView()
-        Stack_View_2.spacing = 10
-        Claim_button.setTitle("Add", for: .normal)
-        Claim_button.setTitleColor(UIColor.black, for: .normal)
-        Claim_button.backgroundColor = UIColor.cyan
-        Claim_button.addTarget(self, action: #selector(add(_:)), for: .touchUpInside)
-        Stack_View_2.addArrangedSubview(Claim_button)
-        view.addSubview(Stack_View_2)
-        
-        let Stack_View_3 = sub_View.arrangedSubviews
+          let Stack_View_3 = sub_View.arrangedSubviews
         for sv in Stack_View_3 {
             let innerStackView = sv as! UIStackView
             for ve in innerStackView.arrangedSubviews {
@@ -46,6 +35,16 @@ class ViewController: UIViewController {
             let constr = Claim_val[i].leadingAnchor.constraint(equalTo: Claim_val[0].leadingAnchor)
             constr.isActive = true
         }
+        
+        // Button settings
+        let Stack_View_2 = UIStackView()
+        Stack_View_2.spacing = 10
+        Claim_button.setTitle("Add", for: .normal)
+        Claim_button.setTitleColor(UIColor.black, for: .normal)
+        Claim_button.backgroundColor = UIColor.cyan
+        Claim_button.addTarget(self, action: #selector(add(_:)), for: .touchUpInside)
+        Stack_View_2.addArrangedSubview(Claim_button)
+        view.addSubview(Stack_View_2)
         
         // Status indicator
         let Stack_View_1 = UIStackView()
@@ -70,13 +69,15 @@ class ViewController: UIViewController {
         Stack_View_2.translatesAutoresizingMaskIntoConstraints = false
         let top_Anc_2 = Stack_View_2.topAnchor.constraint(equalTo: sub_View.bottomAnchor)
         let trail_Anc_2 = Stack_View_2.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
-        top_Anc_2.isActive = true
-        trail_Anc_2.isActive = true
         
         Stack_View_1.translatesAutoresizingMaskIntoConstraints = false
         let top_Anc_1 = Stack_View_1.topAnchor.constraint(equalTo: Stack_View_2.bottomAnchor)
         let trail_Anc_1 = Stack_View_1.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
         let lead_Anc_1 = Stack_View_1.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor)
+        
+        //
+        top_Anc_2.isActive = true
+        trail_Anc_2.isActive = true
         top_Anc_1.isActive = true
         trail_Anc_1.isActive = true
         lead_Anc_1.isActive = true    }
